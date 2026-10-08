@@ -1,3 +1,5 @@
+![portfolio-ai](banner.png)
+
 # Portfolio AI
 
 **An AI assistant for your personal portfolio.** It answers recruiters' questions about you (experience, projects, skills, availability) from a single JSON file, in any language, and never makes things up.
