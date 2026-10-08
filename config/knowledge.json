@@ -1,0 +1,94 @@
+{
+  "_instructions": "This is Alex Rivera's AI knowledge base (fictional example). The assistant answers ONLY from this file and never invents details. Copy it to config/knowledge.json and replace everything with your own facts.",
+  "persona": {
+    "name": "Alex Rivera",
+    "role": "Product Designer — fintech and accessibility",
+    "tone": "Warm, direct and concise. 2 to 4 sentences. Speak about Alex in the third person, or in first person when quoting an FAQ answer. No filler like 'Great question!'. Never exaggerate or invent numbers.",
+    "core_message": "Alex is a product designer who turns messy financial workflows into calm, accessible interfaces, and backs design decisions with research and data.",
+    "language": "Respond in the same language the visitor writes in.",
+    "fallback": {
+      "en": "That's not something I have in my notes, but Alex would be happy to answer it directly. The contact page is the quickest way to reach them.",
+      "es": "Eso no lo tengo en mis notas, pero Alex estará encantado de responderte directamente. La página de contacto es la forma más rápida."
+    }
+  },
+  "bio": "Alex Rivera is a product designer based in Lisbon with five years of experience across fintech and public-sector products. Alex started in graphic design, moved into UX through a bootcamp, and now leads end-to-end product work: research, interaction design, design systems and prototyping.",
+  "background": [
+    "Started as a freelance graphic designer for local businesses",
+    "Moved into UX in 2021 after a career-change bootcamp",
+    "Specialises in accessibility (WCAG 2.2 AA) and design systems"
+  ],
+  "timeline": [
+    { "period": "2019 – 2021", "event": "Freelance graphic designer" },
+    { "period": "2021 – 2023", "event": "UX Designer at Northwind Bank (fictional)" },
+    { "period": "2023 – present", "event": "Senior Product Designer at Ledgerly (fictional)" }
+  ],
+  "languages": {
+    "fluent": ["English", "Portuguese"],
+    "understands": "Conversational Spanish."
+  },
+  "skills": {
+    "core": ["UX Research", "Interaction Design", "Design Systems", "Prototyping", "Accessibility"],
+    "tools": ["Figma", "FigJam", "Maze", "Notion"],
+    "technical": ["HTML", "CSS", "basic JavaScript"],
+    "soft_skills": ["Facilitation", "Stakeholder alignment", "Clear writing"]
+  },
+  "experience": [
+    {
+      "company": "Ledgerly (fictional)",
+      "role": "Senior Product Designer",
+      "dates": "2023 – present",
+      "description": "Leads design for the invoicing product. Rebuilt onboarding, cutting setup drop-off measured in product analytics, and created the company's first token-based design system."
+    },
+    {
+      "company": "Northwind Bank (fictional)",
+      "role": "UX Designer",
+      "dates": "2021 – 2023",
+      "description": "Redesigned the mobile transfers flow and ran monthly usability tests with real customers."
+    }
+  ],
+  "education": [
+    { "institution": "Example Design Bootcamp", "degree": "UX Design Certificate", "status": "Completed 2021" },
+    { "institution": "University of Example", "degree": "BA Communication Design", "status": "Completed 2019" }
+  ],
+  "projects": [
+    {
+      "name": "Ledgerly Onboarding Redesign",
+      "type": "Professional",
+      "role": "Lead designer",
+      "description": "Research-led redesign of a 9-step setup flow into 4 steps with progressive disclosure and inline help.",
+      "case_study_url": "https://example.com/projects/onboarding"
+    },
+    {
+      "name": "Open Transit Map",
+      "type": "Personal",
+      "description": "An accessible, high-contrast transit map prototype tested with low-vision users.",
+      "case_study_url": "https://example.com/projects/transit"
+    }
+  ],
+  "contact": {
+    "website": "https://example.com",
+    "contact_page": "https://example.com/contact",
+    "linkedin": "https://www.linkedin.com/in/example"
+  },
+  "page_urls": {
+    "note": "Canonical portfolio URLs. The assistant includes the relevant one when useful.",
+    "home": "example.com",
+    "projects": "example.com/projects",
+    "about": "example.com/about",
+    "contact": "example.com/contact",
+    "resume": "example.com/resume"
+  },
+  "availability": {
+    "status": "Open to senior product design roles",
+    "detail": "Alex is open to full-time senior product design roles, remote or hybrid in Europe, starting in 2027."
+  },
+  "faq": [
+    { "q": "Why should we hire Alex?", "a": "Alex combines research rigor with shipped, accessible UI, and has led design systems from zero." },
+    { "q": "Does Alex code?", "a": "Enough to prototype in HTML/CSS and talk precisely with engineers, but Alex is a designer, not a developer." },
+    { "q": "What are Alex's salary expectations?", "a": "That depends on the role and scope, so Alex prefers to discuss it directly via the contact page." }
+  ],
+  "personal_facts": {
+    "hobbies": "Bouldering and film photography.",
+    "fun_fact": "Has visited every metro system in Europe at least once."
+  }
+}

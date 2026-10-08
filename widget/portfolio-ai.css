@@ -1,0 +1,103 @@
+/* Portfolio AI widget — override any --pai-* variable on :root or .pai-root to theme it. */
+.pai-root {
+  --pai-accent: #6b3fd4;          /* launcher, send button, user bubble (white text passes AA) */
+  --pai-accent-contrast: #ffffff;
+  --pai-surface: #ffffff;
+  --pai-surface-muted: #f4f2fb;   /* AI bubble + chips */
+  --pai-text: #1d1b26;
+  --pai-text-muted: #5b5870;
+  --pai-border: #e2def0;
+  --pai-link: #5a2fc0;
+  --pai-error: #b42318;
+  --pai-radius: 16px;
+  --pai-radius-sm: 10px;
+  --pai-shadow: 0 12px 40px rgba(20, 10, 50, 0.18);
+  --pai-font: inherit;
+  --pai-font-size: 15px;
+  --pai-width: 380px;
+  --pai-height: 560px;
+  --pai-offset: 20px;
+  --pai-z: 2147483000;
+  font-family: var(--pai-font);
+  font-size: var(--pai-font-size);
+  line-height: 1.45;
+  color: var(--pai-text);
+}
+.pai-root *, .pai-root *::before, .pai-root *::after { box-sizing: border-box; }
+
+.pai-launcher {
+  position: fixed; right: var(--pai-offset); bottom: var(--pai-offset); z-index: var(--pai-z);
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 48px; padding: 0 18px; border: 0; border-radius: 999px;
+  background: var(--pai-accent); color: var(--pai-accent-contrast);
+  font: inherit; font-weight: 600; cursor: pointer; box-shadow: var(--pai-shadow);
+}
+.pai-launcher:focus-visible, .pai-root button:focus-visible, .pai-input:focus-visible {
+  outline: 3px solid var(--pai-accent); outline-offset: 2px;
+}
+.pai-launcher[aria-expanded="true"] { display: none; }
+
+.pai-panel {
+  position: fixed; right: var(--pai-offset); bottom: var(--pai-offset); z-index: var(--pai-z);
+  width: var(--pai-width); height: var(--pai-height); max-height: calc(100dvh - 2 * var(--pai-offset));
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--pai-surface); border: 1px solid var(--pai-border);
+  border-radius: var(--pai-radius); box-shadow: var(--pai-shadow);
+}
+.pai-panel[hidden] { display: none; }
+
+.pai-header {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 14px 16px; border-bottom: 1px solid var(--pai-border);
+}
+.pai-title { margin: 0; font-size: 1em; font-weight: 700; }
+.pai-subtitle { margin: 2px 0 0; font-size: 0.8em; color: var(--pai-text-muted); }
+.pai-close {
+  width: 44px; height: 44px; border: 0; border-radius: var(--pai-radius-sm);
+  background: transparent; color: var(--pai-text); font-size: 22px; cursor: pointer;
+}
+.pai-close:hover { background: var(--pai-surface-muted); }
+
+.pai-thread { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.pai-msg { max-width: 85%; padding: 10px 14px; border-radius: var(--pai-radius); white-space: pre-wrap; overflow-wrap: anywhere; }
+.pai-msg--ai { align-self: flex-start; background: var(--pai-surface-muted); border-bottom-left-radius: 4px; }
+.pai-msg--user { align-self: flex-end; background: var(--pai-accent); color: var(--pai-accent-contrast); border-bottom-right-radius: 4px; }
+.pai-msg--error { color: var(--pai-error); }
+.pai-msg a { color: var(--pai-link); text-decoration: underline; }
+.pai-thinking { color: var(--pai-text-muted); font-style: italic; }
+
+.pai-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.pai-chip {
+  min-height: 36px; padding: 6px 12px; border: 1px solid var(--pai-border); border-radius: 999px;
+  background: var(--pai-surface); color: var(--pai-text); font: inherit; font-size: 0.85em; cursor: pointer; text-align: left;
+}
+.pai-chip:hover { background: var(--pai-surface-muted); }
+.pai-contact { align-self: flex-start; font-size: 0.85em; color: var(--pai-link); }
+
+.pai-form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--pai-border); }
+.pai-input {
+  flex: 1; resize: none; max-height: 120px; padding: 10px 12px;
+  border: 1px solid var(--pai-border); border-radius: var(--pai-radius-sm);
+  background: var(--pai-surface); color: var(--pai-text); font: inherit;
+}
+.pai-send {
+  min-width: 44px; min-height: 44px; padding: 0 14px; border: 0; border-radius: var(--pai-radius-sm);
+  background: var(--pai-accent); color: var(--pai-accent-contrast); font: inherit; font-weight: 600; cursor: pointer;
+}
+.pai-send:disabled { opacity: 0.6; cursor: wait; }
+.pai-footnote { margin: 0; padding: 0 12px 10px; font-size: 0.72em; color: var(--pai-text-muted); }
+.pai-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (max-width: 480px) {
+  .pai-panel { inset: 0; width: 100%; height: 100%; max-height: none; border-radius: 0; border: 0; }
+}
+@media (prefers-color-scheme: dark) {
+  .pai-root[data-theme="auto"] {
+    --pai-surface: #17151f; --pai-surface-muted: #24212f; --pai-text: #f1eff8;
+    --pai-text-muted: #b3afc6; --pai-border: #34304a; --pai-link: #c4b2ff; --pai-accent: #7c55e6;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pai-panel { animation: pai-in 180ms ease-out; }
+  @keyframes pai-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+}

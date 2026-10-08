@@ -1,0 +1,7 @@
+node_modules/
+.env*
+!.env.example
+.vercel/
+.DS_Store
+# Your real knowledge base is yours to commit or not; uncomment to keep it private.
+# config/knowledge.json

@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-ai",
+  "version": "1.0.0",
+  "description": "Drop-in AI assistant for personal portfolios: answers recruiters about you from a JSON knowledge base (Claude Haiku + Vercel).",
+  "license": "MIT",
+  "author": "Vicente Hernaiz (https://vicentehernaiz.tech)",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "dev": "vercel dev",
+    "check": "node --check api/chat.js && node --check api/usage-stats.js && node --check api/keepalive.js && node -e \"JSON.parse(require('fs').readFileSync('config/knowledge.example.json','utf8'))\""
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  }
+}
